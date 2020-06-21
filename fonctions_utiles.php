@@ -140,7 +140,7 @@ function montrerValeur($iduu) {
     global $bdd;
 
     // on verifie si la donnée existe déjà dans la table.
-    $query = $bdd -> prepare("SELECT * from simpledonnee where iduu = :iduu");
+    $query = $bdd -> prepare("SELECT * FROM simpledonnee where iduu = :iduu");
     $query -> execute([":iduu" => $iduu]);
     $val = $query ->  fetch(PDO::FETCH_ASSOC);
     // si elle existe, on retourne sa valeur
