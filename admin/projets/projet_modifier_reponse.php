@@ -10,27 +10,8 @@ proteger_page();
 // Ajout projet :
 if(!empty($_POST)) {
 
-    if($_POST["id_projet"] == 0) {
-
-        $query = $bdd -> prepare ("INSERT INTO projet (titre, techno_id, annee, lien_image, texte, client, lien, en_ligne, ordre) VALUES (:titre, :techno_id, :annee, :texte, :client, :lien, :en_ligne, :ordre)");
-
-        $query -> execute([
-            ":titre" =>  $_POST["titre"],
-            ":techno_id" => $_POST["techno_id"],
-            ":annee" =>  $_POST["annee"],
-            ":lien_image" => $_POST["lien_image"],
-            ":texte" => $_POST["texte"],
-            ":client" =>  $_POST["client"],
-            ":lien" =>  $_POST["lien"],
-            ":en_ligne" =>  $_POST["en_ligne"],
-            ":ordre" =>  $_POST["ordre"],
-        ]);
-
-        $projetID = $bdd -> lastInsertId();
-
-        ajouterSuccess("Un nouveau projet a été ajouté, il a comme identifiant $projetID");
-
-    } else {
+        // sinon on est dans le cas d'une modification :
+    if ($_POST["id_projet"] > 0) {
         // Modifier projet :
         $query = $bdd -> prepare ("UPDATE projet SET
                                           titre = :titre,

@@ -25,7 +25,7 @@ show_success();
     <h2><?php echokey($projetAModifier, "titre") ?></h2>
 
     <div class="form">
-        <form enctype="multipart/form-data" action="projet_formulaire_reponse.php" method="post">
+        <form enctype="multipart/form-data" action="projet_modifier_reponse.php" method="post">
             <!-- crée un champ caché qui va s'appeler id_projet et qui aura comme valeur imposée 0 (fonction echoKey) ; si je n'avais pas renseigné de valeur par défaut, aurait mis une chaîne vide -->
             <input type="hidden" name="id_projet" value="<?php echoKey($projetAModifier, "id_projet", 0)  ?>">
 
