@@ -1,5 +1,10 @@
 <?php
 
+include "../../config.php";
+include "../include/entete.php";
+
+proteger_page();
+
 
 // Ajout projet :
 if(!empty($_POST)) {
@@ -7,7 +12,8 @@ if(!empty($_POST)) {
     // si == 0 (donc si pas d'id_projet) alors on est dans le cas d'une création
     if($_POST["id_projet"] == 0) {
 
-        $query = $bdd -> prepare ("INSERT INTO projet (titre, annee, lien_image, texte, client, lien, en_ligne, ordre) VALUES (:titre, :annee, :texte, :client, :lien, :en_ligne, :ordre)");
+        $query = $bdd -> prepare ("INSERT INTO projet (titre, annee, lien_image, texte, client, lien, en_ligne, ordre)
+                                    VALUES (:titre, :annee, :lien_image, :texte, :client, :lien, :en_ligne, :ordre)");
 
         $query -> execute([
             ":titre" =>  $_POST["titre"],
@@ -25,6 +31,8 @@ if(!empty($_POST)) {
         ajouterSuccess("Un nouveau projet a été ajouté, il a comme identifiant $projetID");
 
       }
+
+    }
 
       if(!empty($_FILES)) {
         enregistrerFichier($_FILES["imageProjet"],  "images/projets/portrait.jpg");
