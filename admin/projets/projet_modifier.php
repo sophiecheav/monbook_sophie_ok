@@ -4,8 +4,8 @@ include "../include/entete.php";
 
 proteger_page();
 
-if(!empty($_GET["projetAAfficher"])) {
-    $projetAModifier = $bdd -> query("SELECT * FROM projet WHERE id_projet = " . $_GET["projetAAfficher"]) -> fetchAll(PDO::FETCH_ASSOC);
+if(!empty($_GET["projet_modifier"])) {
+    $projetAModifier = $bdd -> query("SELECT * FROM projet WHERE id_projet = " . $_GET["projet_modifier"]) -> fetchAll();
 } else {
     $projetAModifier = [];
 }
