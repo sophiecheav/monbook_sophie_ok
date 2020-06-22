@@ -30,22 +30,20 @@ if(!empty($_POST)) {
 
         ajouterSuccess("Un nouveau projet a été ajouté, il a comme identifiant $projetID");
 
-      }
-
     }
 
-      if(!empty($_FILES)) {
-        enregistrerFichier($_FILES["imageProjet"],  "images/projets/portrait.jpg");
+}
 
-        enregistrerFichier($_FILES["imageProjet"], "images/projets/$projetID.jpg");
-      }
+if(!empty($_FILES)) {
+    enregistrerFichier($_FILES["imageProjet"], "images/projets/$projetID.jpg");
+}
 
-      if(!empty($_FILES)) {
-        enregistrerFichier($_FILES["imageProjet2"], "images/projets2/$projetID.jpg");
-      }
+if(!empty($_FILES)) {
+    enregistrerFichier($_FILES["imageProjet2"], "images/projets2/$projetID.jpg");
+}
 
-      if(!empty($_FILES)) {
-        enregistrerFichier($_FILES["imageProjet3"], "images/projets3/$projetID.jpg");
-      }
+if(!empty($_FILES)) {
+    enregistrerFichier($_FILES["imageProjet3"], "images/projets3/$projetID.jpg");
+}
 
-      changeDePage(BOOK_URL_SITE . "admin/projets/projet_liste.php");
+changeDePage(BOOK_URL_SITE . "admin/projets/projet_liste.php");

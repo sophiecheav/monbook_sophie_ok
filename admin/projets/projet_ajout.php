@@ -7,6 +7,9 @@ proteger_page();
     $afficherTechnos = $bdd -> query("SELECT * FROM technologie");
     $technos = $afficherTechnos -> fetchAll();
 
+show_error();
+show_success();
+
 // var_dump();
 
 ?>
@@ -76,17 +79,18 @@ proteger_page();
 
         <div>
           <p>Image 1 du projet : </p>
-          <input name="imageProjet" type="file" accept="image/jpeg, image/jpg, image/png" />
+
+          <input name="lien_image_1" type="file" accept="image/jpeg, image/jpg, image/png" />
         </div>
 
         <div>
           <p>Image du projet 2 : </p>
-          <input name="imageProjet2" type="file"  accept="image/jpeg, image/jpg, image/png" />
+          <input name="lien_image_2" type="file"  accept="image/jpeg, image/jpg, image/png" />
         </div>
 
         <div>
           <p>Image du projet 3 : </p>
-          <input name="imageProjet3" type="file"  accept="image/jpeg, image/jpg, image/png" />
+          <input name="lien_image_3" type="file" accept="image/jpeg, image/jpg, image/png" />
         </div>
 
         <input type="submit" value="Envoyer" class="btn"/>

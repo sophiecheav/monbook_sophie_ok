@@ -11,7 +11,7 @@ show_success();
 
 <h1>Espace administration</h1>
 
-<h2>Modifier vos projets</h2>
+<h2>Gestion des projets</h2>
 
 <div class="menu">
     <a href="<?php echo BOOK_URL_SITE ?>admin/accueil_admin.php">Retour à l'accueil | </a>
@@ -29,7 +29,7 @@ show_success();
         echo "<ul>";
         foreach ($listeProjets as $projetSeul) {
 
-          $lienModifier = html_a("Modifier", BOOK_URL_SITE . "admin/projets/projet_modifier.php?projetAAfficher=$projetSeul[id_projet]");
+          $lienModifier = html_a("Modifier", BOOK_URL_SITE . "admin/projets/projet_modifier.php?projet-a-modifier=$projetSeul[id_projet]");
           $lienSupprimer = html_a("Supprimer", BOOK_URL_SITE . "admin/projets/projet_supprimer.php?projetASupprimer=$projetSeul[id_projet]", "alert", "Voulez-vous effacer ce projet ?");
           echo "<li>$projetSeul[titre]($lienModifier | $lienSupprimer)</li>";
         }

@@ -3,7 +3,10 @@ include "../config.php";
 include "include/entete.php";
 
 
+echo "<div class='error'>";
 show_error();
+echo "</div>";
+
 show_success();
 
 ?>

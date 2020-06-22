@@ -4,8 +4,8 @@ include "../include/entete.php";
 
 proteger_page();
 
-if(!empty($_GET["projet_modifier"])) {
-    $projetAModifier = $bdd -> query("SELECT * FROM projet WHERE id_projet = " . $_GET["projet_modifier"]) -> fetchAll();
+if(!empty($_GET["projet-a-modifier"])) {
+    $projetAModifier = $bdd -> query("SELECT * FROM projet WHERE id_projet = " . $_GET["projet-a-modifier"]) -> fetchAll();
 } else {
     $projetAModifier = [];
 }
@@ -44,7 +44,7 @@ show_success();
 <!-- Comment lier la table technologies et insérer le champ dans le formulaire ??? -->
 
             <div class="field">
-              Technologies utilisées : <input name="techno_id" placeholder="Technologie" type="text" value="<?php echokey($projetAModifier, "techno_id") ?>">
+              Technologies utilisées : <input name="techno_id" placeholder="Technologie" type="text" value="">
             </div>
 
             <div class="field">
@@ -58,8 +58,8 @@ show_success();
             <div class="field">
                 En ligne :
                 <div class="list2">
-                  <label for="oui">oui<input name="en_ligne" id="oui" type="radio"  value="1" required></label>
-                  <label for="non">non<input name="en_ligne" id="non" type="radio"  value="0" required></label>
+                  <label for="oui">oui<input name="en_ligne" id="oui" type="radio"  value="1"></label>
+                  <label for="non">non<input name="en_ligne" id="non" type="radio"  value="0"></label>
                 </div>
             </div>
 
@@ -71,9 +71,9 @@ show_success();
 
             <div class="field image_admin">
             <?php
-            if(!empty($_GET["projetAAfficher"])) {
-                echo html_image_projets("images/projets/$_GET[projetAAfficher].jpg", "mini_image");
-                }
+            if(!empty($_GET["projet-a-modifier"])) {
+                echo html_image_projets("images/projets/" . $_GET["projet-a-modifier"] . ".jpg", "mini_image");
+            }
             ?>
             </div>
 
