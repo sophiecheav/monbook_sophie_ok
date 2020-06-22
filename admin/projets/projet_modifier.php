@@ -4,21 +4,19 @@ include "../include/entete.php";
 
 proteger_page();
 
-global $bdd;
-
-
-
 if(!empty($_GET["projetAAfficher"])) {
-    $projetAModifier = $bdd -> query("SELECT * FROM projet WHERE id_projet = " . $_GET["projetAAfficher"]) -> fetch();
+    $projetAModifier = $bdd -> query("SELECT * FROM projet WHERE id_projet = " . $_GET["projetAAfficher"]) -> fetchAll(PDO::FETCH_ASSOC);
 } else {
     $projetAModifier = [];
 }
+
+var_dump($projetAModifier);
 
 show_error();
 show_success();
 ?>
 
-    <h1>Gestion des projets</h1>
+    <h1>Modifier le projet</h1>
 
     <div class="menu">
         <a href="<?php echo BOOK_URL_SITE ?>admin/accueil_admin.php">Retour à l'accueil admin</a>

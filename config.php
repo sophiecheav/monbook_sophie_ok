@@ -13,7 +13,7 @@ $bdd = new PDO("mysql:host=$serveur;dbname=$nomBaseDeDonnees", $utilisateur, $mo
 
 
 // Je définis mes constantes / chemins disque dur, url...
-define("BOOK_URL_SITE", "http://localhost:8888/formationphp/monbook_sophie_bis/");
+define("BOOK_URL_SITE", "http://localhost:8888/formationphp/monbook_sophie_ok/");
 // __DIR__ = chemin de mon disque dur jusqu'à mon site web
 define("BOOK_PATH_SITE", __DIR__ . "/");
 
