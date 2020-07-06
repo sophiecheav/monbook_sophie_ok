@@ -59,7 +59,7 @@
       echo "<div class='card' style='width: 18rem;'>";
       echo "<div class='card-body'>";
       echo "<h2>" . $projet["titre"] . "</h2>";
-      echo html_image_projets($projet['lien_image'], "mini-image");
+      echo html_image_projets($projet['lien_image_1'], "mini-image");
       echo "<br>";
       echo "<div class='card-text'>" . $projet["texte"] . "</div>";
       echo "<br>";

@@ -14,7 +14,7 @@
 
 
   echo "<h2>" . $monProjetSeul["titre"] . "</h2>";
-  echo "<div class='img-principale'>" . html_image_projets($monProjetSeul["lien_image"], "photo-grande") . "</div>";
+  echo "<div class='img-principale'>" . html_image_projets($monProjetSeul["lien_image_1"], "photo-grande") . "</div>";
   //
   // foreach ($techno_a_afficher as $key => $techno) {
   //   echo "<div>$techno[nom_techno]</div>";

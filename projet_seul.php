@@ -3,10 +3,10 @@
   include "config.php";
 
   $projet_a_afficher = $bdd -> query(
-    "SELECT titre, texte, lien_image, annee, client, lien
+    "SELECT titre, texte, lien_image_1, annee, client, lien
     FROM projet
-    WHERE id_projet = ($_GET[lien_projet])")
-    -> fetch();
+    WHERE id_projet = '$_GET[lien_projet]'")
+   -> fetch();
 
   $techno_a_afficher = $bdd -> query(
     "SELECT nom_techno
